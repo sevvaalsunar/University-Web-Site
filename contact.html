@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Samsun Üniversitesi Yazılım Mühendisliği Bölümü</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-section {
+            padding: 12rem 1.5rem 4rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .contact-info {
+            backdrop-filter: blur(8px);
+            background: rgba(26, 46, 71, 0.2);
+            border: 1px solid rgba(184, 149, 106, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        .contact-title {
+            font-family: var(--font-playfair);
+            color: var(--aged-brass);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-desc {
+            color: rgba(255, 254, 242, 0.7);
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item-large {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            backdrop-filter: blur(8px);
+            background: rgba(10, 22, 40, 0.3);
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item-large:hover {
+            background: rgba(10, 22, 40, 0.5);
+            transform: translateX(8px);
+        }
+
+        .contact-icon-large {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: rgba(184, 149, 106, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--aged-brass);
+            flex-shrink: 0;
+        }
+
+        .contact-item-content h3 {
+            font-family: var(--font-playfair);
+            color: var(--aged-brass);
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item-content p {
+            color: rgba(255, 254, 242, 0.7);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            backdrop-filter: blur(8px);
+            background: rgba(26, 46, 71, 0.2);
+            border: 1px solid rgba(184, 149, 106, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            color: var(--aged-brass);
+            font-family: var(--font-inter);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: rgba(10, 22, 40, 0.5);
+            border: 1px solid rgba(184, 149, 106, 0.3);
+            border-radius: 0.5rem;
+            color: var(--ivory-white);
+            font-family: var(--font-inter);
+            font-size: 0.9375rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--aged-brass);
+            background: rgba(10, 22, 40, 0.7);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-button {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--aged-brass);
+            color: var(--navy-blue);
+            border: none;
+            border-radius: 9999px;
+            font-family: var(--font-inter);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-button:hover {
+            background: var(--aged-brass-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(184, 149, 106, 0.3);
+        }
+
+        .map-section {
+            margin-top: 4rem;
+            backdrop-filter: blur(8px);
+            background: rgba(26, 46, 71, 0.2);
+            border: 1px solid rgba(184, 149, 106, 0.2);
+            border-radius: 1rem;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 22, 40, 0.3);
+            color: rgba(255, 254, 242, 0.5);
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-desktop" id="nav-desktop">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="src/imports/Ekran_görüntüsü_2026-04-17_152101.png" alt="Samsun University Logo" class="logo-img">
+                <span class="logo-text" data-tr="Samsun Üniversitesi Yazılım Mühendisliği Bölümü" data-en="Samsun University Software Engineering Department">Samsun Üniversitesi Yazılım Mühendisliği Bölümü</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+                <a href="about.html" class="nav-link" data-tr="Bölüm Hakkında" data-en="About">Bölüm Hakkında</a>
+                <a href="faculty.html" class="nav-link" data-tr="Personel" data-en="Faculty">Personel</a>
+                <a href="curriculum.html" class="nav-link" data-tr="Eğitim" data-en="Curriculum">Eğitim</a>
+                <a href="projects.html" class="nav-link" data-tr="Projeler" data-en="Projects">Projeler</a>
+                <a href="research.html" class="nav-link" data-tr="Araştırma" data-en="Research">Araştırma</a>
+                <a href="news.html" class="nav-link" data-tr="Haberler" data-en="News">Haberler</a>
+                <a href="contact.html" class="nav-link active" data-tr="İletişim" data-en="Contact">İletişim</a>
+            </div>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="TR">TR</button>
+                <button class="lang-btn" data-lang="EN">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="nav-mobile" id="nav-mobile">
+        <div class="nav-mobile-header">
+            <a href="index.html" class="nav-logo-mobile">
+                <img src="src/imports/Ekran_görüntüsü_2026-04-17_152101.png" alt="Samsun University Logo" class="logo-img">
+                <span class="logo-text-mobile">SAMÜ YM</span>
+            </a>
+            <div class="mobile-controls">
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="TR">TR</button>
+                    <button class="lang-btn" data-lang="EN">EN</button>
+                </div>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html" class="mobile-link" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+            <a href="about.html" class="mobile-link" data-tr="Bölüm Hakkında" data-en="About">Bölüm Hakkında</a>
+            <a href="faculty.html" class="mobile-link" data-tr="Personel" data-en="Faculty">Personel</a>
+            <a href="curriculum.html" class="mobile-link" data-tr="Eğitim" data-en="Curriculum">Eğitim</a>
+            <a href="projects.html" class="mobile-link" data-tr="Projeler" data-en="Projects">Projeler</a>
+            <a href="research.html" class="mobile-link" data-tr="Araştırma" data-en="Research">Araştırma</a>
+            <a href="news.html" class="mobile-link" data-tr="Haberler" data-en="News">Haberler</a>
+            <a href="contact.html" class="mobile-link active" data-tr="İletişim" data-en="Contact">İletişim</a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div>
+                    <div class="contact-info">
+                        <h1 class="contact-title" data-tr="İletişime Geçin" data-en="Get In Touch">İletişime Geçin</h1>
+                        <p class="contact-desc" 
+                           data-tr="Sorularınız, önerileriniz veya işbirliği talepleriniz için bizimle iletişime geçebilirsiniz. Size en kısa sürede dönüş yapacağız."
+                           data-en="You can contact us for your questions, suggestions or collaboration requests. We will get back to you as soon as possible.">
+                            Sorularınız, önerileriniz veya işbirliği talepleriniz için bizimle iletişime geçebilirsiniz. Size en kısa sürede dönüş yapacağız.
+                        </p>
+                    </div>
+
+                    <div class="contact-item-large">
+                        <div class="contact-icon-large">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <div class="contact-item-content">
+                            <h3 data-tr="Adres" data-en="Address">Adres</h3>
+                            <p data-tr="Samsun Üniversitesi Mühendislik Fakültesi Ballıca Kampüsü, 19 Mayıs, Samsun, Türkiye"
+                               data-en="Samsun University Faculty of Engineering Ballıca Campus, 19 Mayıs, Samsun, Turkey">
+                                Samsun Üniversitesi Mühendislik Fakültesi Ballıca Kampüsü, 19 Mayıs, Samsun, Türkiye
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item-large">
+                        <div class="contact-icon-large">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <div class="contact-item-content">
+                            <h3 data-tr="Telefon" data-en="Phone">Telefon</h3>
+                            <p>+90 (362) 313 0055</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item-large">
+                        <div class="contact-icon-large">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <div class="contact-item-content">
+                            <h3 data-tr="E-posta" data-en="Email">E-posta</h3>
+                            <p>muhendislik@samsun.edu.tr</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item-large">
+                        <div class="contact-icon-large">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <div class="contact-item-content">
+                            <h3 data-tr="Çalışma Saatleri" data-en="Working Hours">Çalışma Saatleri</h3>
+                            <p data-tr="Pazartesi - Cuma: 08:30 - 17:30"
+                               data-en="Monday - Friday: 08:30 - 17:30">
+                                Pazartesi - Cuma: 08:30 - 17:30
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2 class="contact-title" data-tr="Mesaj Gönderin" data-en="Send a Message">Mesaj Gönderin</h2>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label class="form-label" for="name">
+                                <span data-tr="Ad Soyad" data-en="Full Name">Ad Soyad</span>
+                            </label>
+                            <input type="text" id="name" name="name" class="form-input" required
+                                   data-tr="Adınızı ve soyadınızı girin"
+                                   data-en="Enter your full name"
+                                   placeholder="Adınızı ve soyadınızı girin">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="email">
+                                <span data-tr="E-posta" data-en="Email">E-posta</span>
+                            </label>
+                            <input type="email" id="email" name="email" class="form-input" required
+                                   data-tr="E-posta adresinizi girin"
+                                   data-en="Enter your email address"
+                                   placeholder="E-posta adresinizi girin">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="subject">
+                                <span data-tr="Konu" data-en="Subject">Konu</span>
+                            </label>
+                            <input type="text" id="subject" name="subject" class="form-input" required
+                                   data-tr="Mesaj konusunu girin"
+                                   data-en="Enter message subject"
+                                   placeholder="Mesaj konusunu girin">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">
+                                <span data-tr="Mesaj" data-en="Message">Mesaj</span>
+                            </label>
+                            <textarea id="message" name="message" class="form-textarea" required
+                                      data-tr="Mesajınızı buraya yazın..."
+                                      data-en="Write your message here..."
+                                      placeholder="Mesajınızı buraya yazın..."></textarea>
+                        </div>
+
+                        <button type="submit" class="form-button">
+                            <span data-tr="Mesajı Gönder" data-en="Send Message">Mesajı Gönder</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map Placeholder -->
+            <div class="map-section">
+                <div class="map-placeholder">
+                    <span data-tr="[ Kampüs Haritası Buraya Eklenecek ]" data-en="[ Campus Map Will Be Added Here ]">
+                        [ Kampüs Haritası Buraya Eklenecek ]
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title" data-tr="Samsun Üniversitesi" data-en="Samsun University">Samsun Üniversitesi</h3>
+                    <p class="footer-subtitle" data-tr="Yazılım Mühendisliği Bölümü" data-en="Software Engineering Department">Yazılım Mühendisliği Bölümü</p>
+                    <p class="footer-badge" data-tr="2018'den Beri Eğitimde Mükemmellik" data-en="Excellence in Education Since 2018">2018'den Beri Eğitimde Mükemmellik</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-tr="Hızlı Bağlantılar" data-en="Quick Links">Hızlı Bağlantılar</h4>
+                    <div class="footer-links">
+                        <a href="about.html" class="footer-link" data-tr="Bölüm Hakkında" data-en="About the Department">Bölüm Hakkında</a>
+                        <a href="faculty.html" class="footer-link" data-tr="Akademisyenler" data-en="Faculty">Akademisyenler</a>
+                        <a href="admissions.html" class="footer-link" data-tr="Başvuru" data-en="Admissions">Başvuru</a>
+                        <a href="research.html" class="footer-link" data-tr="Araştırma" data-en="Research">Araştırma</a>
+                        <a href="curriculum.html" class="footer-link" data-tr="Müfredat" data-en="Curriculum">Müfredat</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-tr="İletişim" data-en="Contact">İletişim</h4>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i data-lucide="map-pin"></i>
+                            <span data-tr="Samsun Üniversitesi Mühendislik Fakültesi Ballıca Kampüsü, 19 Mayıs, Samsun" 
+                                  data-en="Samsun University Faculty of Engineering Ballıca Campus, 19 Mayıs, Samsun">
+                                Samsun Üniversitesi Mühendislik Fakültesi Ballıca Kampüsü, 19 Mayıs, Samsun
+                            </span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="phone"></i>
+                            <span>+90 (362) 313 0055</span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="mail"></i>
+                            <span>muhendislik@samsun.edu.tr</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-tr="Bizi Takip Edin" data-en="Follow Us">Bizi Takip Edin</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/samsun.univ" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                            <i data-lucide="facebook"></i>
+                        </a>
+                        <a href="https://x.com/samsun_univ" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/school/samsununiversitesi/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/samsun.univ/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                            <i data-lucide="instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/c/Samsun%C3%9Cniversitesii" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+                            <i data-lucide="youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright" 
+                   data-tr="© 2026 Samsun Üniversitesi Yazılım Mühendisliği Bölümü. Tüm hakları saklıdır."
+                   data-en="© 2026 Samsun University Software Engineering Department. All rights reserved.">
+                    © 2026 Samsun Üniversitesi Yazılım Mühendisliği Bölümü. Tüm hakları saklıdır.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personel - Samsun Üniversitesi Yazılım Mühendisliği Bölümü</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="faculty-styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-desktop" id="nav-desktop">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="src/imports/Ekran_görüntüsü_2026-04-17_152101.png" alt="Samsun University Logo" class="logo-img">
+                <span class="logo-text" data-tr="Samsun Üniversitesi Yazılım Mühendisliği Bölümü" data-en="Samsun University Software Engineering Department">Samsun Üniversitesi Yazılım Mühendisliği Bölümü</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+                <a href="about.html" class="nav-link" data-tr="Bölüm Hakkında" data-en="About">Bölüm Hakkında</a>
+                <a href="faculty.html" class="nav-link active" data-tr="Personel" data-en="Faculty">Personel</a>
+                <a href="curriculum.html" class="nav-link" data-tr="Eğitim" data-en="Curriculum">Eğitim</a>
+                <a href="projects.html" class="nav-link" data-tr="Projeler" data-en="Projects">Projeler</a>
+                <a href="research.html" class="nav-link" data-tr="Araştırma" data-en="Research">Araştırma</a>
+                <a href="news.html" class="nav-link" data-tr="Haberler" data-en="News">Haberler</a>
+                <a href="contact.html" class="nav-link" data-tr="İletişim" data-en="Contact">İletişim</a>
+            </div>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="TR">TR</button>
+                <button class="lang-btn" data-lang="EN">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="nav-mobile" id="nav-mobile">
+        <div class="nav-mobile-header">
+            <a href="index.html" class="nav-logo-mobile">
+                <img src="src/imports/Ekran_görüntüsü_2026-04-17_152101.png" alt="Samsun University Logo" class="logo-img">
+                <span class="logo-text-mobile">SAMÜ YM</span>
+            </a>
+            <div class="mobile-controls">
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="TR">TR</button>
+                    <button class="lang-btn" data-lang="EN">EN</button>
+                </div>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html" class="mobile-link" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+            <a href="about.html" class="mobile-link" data-tr="Bölüm Hakkında" data-en="About">Bölüm Hakkında</a>
+            <a href="faculty.html" class="mobile-link active" data-tr="Personel" data-en="Faculty">Personel</a>
+            <a href="curriculum.html" class="mobile-link" data-tr="Eğitim" data-en="Curriculum">Eğitim</a>
+            <a href="projects.html" class="mobile-link" data-tr="Projeler" data-en="Projects">Projeler</a>
+            <a href="research.html" class="mobile-link" data-tr="Araştırma" data-en="Research">Araştırma</a>
+            <a href="news.html" class="mobile-link" data-tr="Haberler" data-en="News">Haberler</a>
+            <a href="contact.html" class="mobile-link" data-tr="İletişim" data-en="Contact">İletişim</a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title" data-tr="Akademisyenlerimiz" data-en="Our Faculty">Akademisyenlerimiz</h1>
+            <p class="page-description" 
+               data-tr="Öğrencilerimizi yazılım mühendisliği ve bilgisayar bilimleri alanında mükemmelliğe yönlendiren seçkin akademisyenler ve araştırmacılarımızla tanışın."
+               data-en="Meet our distinguished academics and researchers who guide our students toward excellence in software engineering and computer science.">
+                Öğrencilerimizi yazılım mühendisliği ve bilgisayar bilimleri alanında mükemmelliğe yönlendiren seçkin akademisyenler ve araştırmacılarımızla tanışın.
+            </p>
+        </div>
+    </section>
+
+    <!-- Department Filter -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-buttons" id="faculty-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <span data-tr="Tümü" data-en="All">Tümü</span>
+                </button>
+                <button class="filter-btn" data-filter="software-architecture">
+                    <span data-tr="Yazılım Mimarisi" data-en="Software Architecture">Yazılım Mimarisi</span>
+                </button>
+                <button class="filter-btn" data-filter="artificial-intelligence">
+                    <span data-tr="Yapay Zeka" data-en="Artificial Intelligence">Yapay Zeka</span>
+                </button>
+                <button class="filter-btn" data-filter="cybersecurity">
+                    <span data-tr="Siber Güvenlik" data-en="Cybersecurity">Siber Güvenlik</span>
+                </button>
+                <button class="filter-btn" data-filter="data-science">
+                    <span data-tr="Veri Bilimi" data-en="Data Science">Veri Bilimi</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Grid -->
+    <section class="faculty-section">
+        <div class="container">
+            <div class="faculty-grid" id="faculty-grid">
+                <!-- Faculty Member 1 -->
+                <div class="faculty-card" data-department="software-architecture">
+                    <div class="faculty-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1629507208649-70919ca33793?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Prof. Dr. Muammer Türkoğlu" class="faculty-img">
+                        <div class="faculty-overlay"></div>
+                        <div class="faculty-hover"></div>
+                    </div>
+                    <div class="faculty-content">
+                        <h3 class="faculty-name">Prof. Dr. Muammer Türkoğlu</h3>
+                        <p class="faculty-title" data-tr="Bölüm Başkanı" data-en="Department Chair">Bölüm Başkanı</p>
+                        <p class="faculty-department" data-tr="Yazılım Mimarisi" data-en="Software Architecture">Yazılım Mimarisi</p>
+                        <p class="faculty-specialization" data-tr="Dağıtık Sistemler, Bulut Bilişim" data-en="Distributed Systems, Cloud Computing">Dağıtık Sistemler, Bulut Bilişim</p>
+                        <div class="faculty-stats">
+                            <div class="faculty-stat">
+                                <i data-lucide="book-open"></i>
+                                <span>85 <span data-tr="Yayın" data-en="Publications">Yayın</span></span>
+                            </div>
+                        </div>
+                        <div class="faculty-links">
+                            <a href="mailto:muammer.turkoglu@samsun.edu.tr" class="faculty-link-btn" aria-label="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                            <a href="https://tr.linkedin.com/in/muammer-t%C3%BCrko%C4%9Flu-a9a71746" target="_blank" rel="noopener noreferrer" class="faculty-link-btn" aria-label="LinkedIn">
+                                <i data-lucide="linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="faculty-corner faculty-corner-top"></div>
+                    <div class="faculty-corner faculty-corner-bottom"></div>
+                </div>
+
+                <!-- Faculty Member 2 -->
+                <div class="faculty-card" data-department="artificial-intelligence">
+                    <div class="faculty-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1610387694365-19fafcc86d86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Doç. Dr. Emel Soylu" class="faculty-img">
+                        <div class="faculty-overlay"></div>
+                        <div class="faculty-hover"></div>
+                    </div>
+                    <div class="faculty-content">
+                        <h3 class="faculty-name">Doç. Dr. Emel Soylu</h3>
+                        <p class="faculty-title" data-tr="Bölüm Başkan Yardımcısı" data-en="Associate Department Chair">Bölüm Başkan Yardımcısı</p>
+                        <p class="faculty-department" data-tr="Yapay Zeka" data-en="Artificial Intelligence">Yapay Zeka</p>
+                        <p class="faculty-specialization" data-tr="Derin Öğrenme, Sinir Ağları" data-en="Deep Learning, Neural Networks">Derin Öğrenme, Sinir Ağları</p>
+                        <div class="faculty-stats">
+                            <div class="faculty-stat">
+                                <i data-lucide="book-open"></i>
+                                <span>72 <span data-tr="Yayın" data-en="Publications">Yayın</span></span>
+                            </div>
+                        </div>
+                        <div class="faculty-links">
+                            <a href="mailto:emel.soylu@samsun.edu.tr" class="faculty-link-btn" aria-label="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                            <a href="https://tr.linkedin.com/in/emel-soylu-22814a311" target="_blank" rel="noopener noreferrer" class="faculty-link-btn" aria-label="LinkedIn">
+                                <i data-lucide="linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="faculty-corner faculty-corner-top"></div>
+                    <div class="faculty-corner faculty-corner-bottom"></div>
+                </div>
+
+                <!-- Faculty Member 3 -->
+                <div class="faculty-card" data-department="cybersecurity">
+                    <div class="faculty-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1629507208649-70919ca33793?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Dr. Öğr. Üyesi Özgür Tonkal" class="faculty-img">
+                        <div class="faculty-overlay"></div>
+                        <div class="faculty-hover"></div>
+                    </div>
+                    <div class="faculty-content">
+                        <h3 class="faculty-name">Dr. Öğr. Üyesi Özgür Tonkal</h3>
+                        <p class="faculty-title" data-tr="Bölüm Başkan Yardımcısı" data-en="Associate Department Chair">Bölüm Başkan Yardımcısı</p>
+                        <p class="faculty-department" data-tr="Siber Güvenlik" data-en="Cybersecurity">Siber Güvenlik</p>
+                        <p class="faculty-specialization" data-tr="Ağ Güvenliği, Kriptografi" data-en="Network Security, Cryptography">Ağ Güvenliği, Kriptografi</p>
+                        <div class="faculty-stats">
+                            <div class="faculty-stat">
+                                <i data-lucide="book-open"></i>
+                                <span>58 <span data-tr="Yayın" data-en="Publications">Yayın</span></span>
+                            </div>
+                        </div>
+                        <div class="faculty-links">
+                            <a href="mailto:ozgur.tonkal@samsun.edu.tr" class="faculty-link-btn" aria-label="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                            <a href="https://tr.linkedin.com/in/ozgrcglr" target="_blank" rel="noopener noreferrer" class="faculty-link-btn" aria-label="LinkedIn">
+                                <i data-lucide="linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="faculty-corner faculty-corner-top"></div>
+                    <div class="faculty-corner faculty-corner-bottom"></div>
+                </div>
+
+                <!-- Faculty Member 4 -->
+                <div class="faculty-card" data-department="software-architecture">
+                    <div class="faculty-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1758685734503-58a8accc24e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Dr. Öğr. Üyesi Hüseyin Demir" class="faculty-img">
+                        <div class="faculty-overlay"></div>
+                        <div class="faculty-hover"></div>
+                    </div>
+                    <div class="faculty-content">
+                        <h3 class="faculty-name">Dr. Öğr. Üyesi Hüseyin Demir</h3>
+                        <p class="faculty-title" data-tr="Öğretim Üyesi" data-en="Faculty Member">Öğretim Üyesi</p>
+                        <p class="faculty-department" data-tr="Yazılım Mimarisi" data-en="Software Architecture">Yazılım Mimarisi</p>
+                        <p class="faculty-specialization" data-tr="Yazılım Mühendisliği, Tasarım Kalıpları" data-en="Software Engineering, Design Patterns">Yazılım Mühendisliği, Tasarım Kalıpları</p>
+                        <div class="faculty-stats">
+                            <div class="faculty-stat">
+                                <i data-lucide="book-open"></i>
+                                <span>64 <span data-tr="Yayın" data-en="Publications">Yayın</span></span>
+                            </div>
+                        </div>
+                        <div class="faculty-links">
+                            <a href="mailto:huseyin.demir@samsun.edu.tr" class="faculty-link-btn" aria-label="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                            <a href="https://tr.linkedin.com/in/huseyin-demir-phd-professor-at-samsun-university-aa7784371/tr" target="_blank" rel="noopener noreferrer" class="faculty-link-btn" aria-label="LinkedIn">
+                                <i data-lucide="linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="faculty-corner faculty-corner-top"></div>
+                    <div class="faculty-corner faculty-corner-bottom"></div>
+                </div>
+
+                <!-- Faculty Member 5 -->
+                <div class="faculty-card" data-department="artificial-intelligence">
+                    <div class="faculty-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1758685734503-58a8accc24e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Doç. Dr. Zafer Cömert" class="faculty-img">
+                        <div class="faculty-overlay"></div>
+                        <div class="faculty-hover"></div>
+                    </div>
+                    <div class="faculty-content">
+                        <h3 class="faculty-name">Doç. Dr. Zafer Cömert</h3>
+                        <p class="faculty-title" data-tr="Öğretim Üyesi" data-en="Faculty Member">Öğretim Üyesi</p>
+                        <p class="faculty-department" data-tr="Yapay Zeka" data-en="Artificial Intelligence">Yapay Zeka</p>
+                        <p class="faculty-specialization" data-tr="Makine Öğrenmesi, Görüntü İşleme" data-en="Machine Learning, Image Processing">Makine Öğrenmesi, Görüntü İşleme</p>
+                        <div class="faculty-stats">
+                            <div class="faculty-stat">
+                                <i data-lucide="book-open"></i>
+                                <span>94 <span data-tr="Yayın" data-en="Publications">Yayın</span></span>
+                            </div>
+                        </div>
+                        <div class="faculty-links">
+                            <a href="mailto:zafer.comert@samsun.edu.tr" class="faculty-link-btn" aria-label="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                            <a href="https://tr.linkedin.com/in/zafer-c%C3%B6mert-51000367" target="_blank" rel="noopener noreferrer" class="faculty-link-btn" aria-label="LinkedIn">
+                                <i data-lucide="linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="faculty-corner faculty-corner-top"></div>
+                    <div class="faculty-corner faculty-corner-bottom"></div>
+                </div>
+
+                <!-- Faculty Member 6 -->
+                <div class="faculty-card" data-department="data-science">
+                    <div class="faculty-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1629507208649-70919ca33793?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Dr. Öğr. Üyesi Abdulkadir Karacı" class="faculty-img">
+                        <div class="faculty-overlay"></div>
+                        <div class="faculty-hover"></div>
+                    </div>
+                    <div class="faculty-content">
+                        <h3 class="faculty-name">Dr. Öğr. Üyesi Abdulkadir Karacı</h3>
+                        <p class="faculty-title" data-tr="Öğretim Üyesi" data-en="Faculty Member">Öğretim Üyesi</p>
+                        <p class="faculty-department" data-tr="Veri Bilimi" data-en="Data Science">Veri Bilimi</p>
+                        <p class="faculty-specialization" data-tr="Veri Madenciliği, Büyük Veri Analitiği" data-en="Data Mining, Big Data Analytics">Veri Madenciliği, Büyük Veri Analitiği</p>
+                        <div class="faculty-stats">
+                            <div class="faculty-stat">
+                                <i data-lucide="book-open"></i>
+                                <span>71 <span data-tr="Yayın" data-en="Publications">Yayın</span></span>
+                            </div>
+                        </div>
+                        <div class="faculty-links">
+                            <a href="mailto:abdulkadir.karaci@samsun.edu.tr" class="faculty-link-btn" aria-label="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                            <a href="https://tr.linkedin.com/in/abdulkadir-karaci-7a777195" target="_blank" rel="noopener noreferrer" class="faculty-link-btn" aria-label="LinkedIn">
+                                <i data-lucide="linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="faculty-corner faculty-corner-top"></div>
+                    <div class="faculty-corner faculty-corner-bottom"></div>
+                </div>
+
+                <!-- Faculty Member 7 -->
+                <div class="faculty-card" data-department="cybersecurity">
+                    <div class="faculty-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1758685734503-58a8accc24e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Dr. Öğr. Üyesi Selçuk Çakmak" class="faculty-img">
+                        <div class="faculty-overlay"></div>
+                        <div class="faculty-hover"></div>
+                    </div>
+                    <div class="faculty-content">
+                        <h3 class="faculty-name">Dr. Öğr. Üyesi Selçuk Çakmak</h3>
+                        <p class="faculty-title" data-tr="Öğretim Üyesi" data-en="Faculty Member">Öğretim Üyesi</p>
+                        <p class="faculty-department" data-tr="Siber Güvenlik" data-en="Cybersecurity">Siber Güvenlik</p>
+                        <p class="faculty-specialization" data-tr="Bilgi Güvenliği, Kriptografi" data-en="Information Security, Cryptography">Bilgi Güvenliği, Kriptografi</p>
+                        <div class="faculty-stats">
+                            <div class="faculty-stat">
+                                <i data-lucide="book-open"></i>
+                                <span>52 <span data-tr="Yayın" data-en="Publications">Yayın</span></span>
+                            </div>
+                        </div>
+                        <div class="faculty-links">
+                            <a href="mailto:selcuk.cakmak@samsun.edu.tr" class="faculty-link-btn" aria-label="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                            <a href="https://tr.linkedin.com/in/secakmak" target="_blank" rel="noopener noreferrer" class="faculty-link-btn" aria-label="LinkedIn">
+                                <i data-lucide="linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="faculty-corner faculty-corner-top"></div>
+                    <div class="faculty-corner faculty-corner-bottom"></div>
+                </div>
+
+                <!-- Faculty Member 8 -->
+                <div class="faculty-card" data-department="software-architecture">
+                    <div class="faculty-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1629507208649-70919ca33793?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Arş. Gör. Alper Talha Karadeniz" class="faculty-img">
+                        <div class="faculty-overlay"></div>
+                        <div class="faculty-hover"></div>
+                    </div>
+                    <div class="faculty-content">
+                        <h3 class="faculty-name">Arş. Gör. Alper Talha Karadeniz</h3>
+                        <p class="faculty-title" data-tr="Araştırma Görevlisi" data-en="Research Assistant">Araştırma Görevlisi</p>
+                        <p class="faculty-department" data-tr="Yazılım Mimarisi" data-en="Software Architecture">Yazılım Mimarisi</p>
+                        <p class="faculty-specialization" data-tr="Mobil Uygulama Geliştirme, Web Teknolojileri" data-en="Mobile Application Development, Web Technologies">Mobil Uygulama Geliştirme, Web Teknolojileri</p>
+                        <div class="faculty-stats">
+                            <div class="faculty-stat">
+                                <i data-lucide="book-open"></i>
+                                <span>28 <span data-tr="Yayın" data-en="Publications">Yayın</span></span>
+                            </div>
+                        </div>
+                        <div class="faculty-links">
+                            <a href="mailto:alper.karadeniz@samsun.edu.tr" class="faculty-link-btn" aria-label="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                            <a href="https://tr.linkedin.com/in/alper-talha-karadeniz-40440b280" target="_blank" rel="noopener noreferrer" class="faculty-link-btn" aria-label="LinkedIn">
+                                <i data-lucide="linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="faculty-corner faculty-corner-top"></div>
+                    <div class="faculty-corner faculty-corner-bottom"></div>
+                </div>
+
+                <!-- Faculty Member 9 -->
+                <div class="faculty-card" data-department="artificial-intelligence">
+                    <div class="faculty-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1758685734503-58a8accc24e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Arş. Gör. Nurettin Şenyer" class="faculty-img">
+                        <div class="faculty-overlay"></div>
+                        <div class="faculty-hover"></div>
+                    </div>
+                    <div class="faculty-content">
+                        <h3 class="faculty-name">Arş. Gör. Nurettin Şenyer</h3>
+                        <p class="faculty-title" data-tr="Araştırma Görevlisi" data-en="Research Assistant">Araştırma Görevlisi</p>
+                        <p class="faculty-department" data-tr="Yapay Zeka" data-en="Artificial Intelligence">Yapay Zeka</p>
+                        <p class="faculty-specialization" data-tr="Doğal Dil İşleme, Yapay Zeka Uygulamaları" data-en="Natural Language Processing, AI Applications">Doğal Dil İşleme, Yapay Zeka Uygulamaları</p>
+                        <div class="faculty-stats">
+                            <div class="faculty-stat">
+                                <i data-lucide="book-open"></i>
+                                <span>21 <span data-tr="Yayın" data-en="Publications">Yayın</span></span>
+                            </div>
+                        </div>
+                        <div class="faculty-links">
+                            <a href="mailto:nurettin.senyer@samsun.edu.tr" class="faculty-link-btn" aria-label="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/nurettin-senyer/tr" target="_blank" rel="noopener noreferrer" class="faculty-link-btn" aria-label="LinkedIn">
+                                <i data-lucide="linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="faculty-corner faculty-corner-top"></div>
+                    <div class="faculty-corner faculty-corner-bottom"></div>
+                </div>
+
+                <!-- Faculty Member 10 -->
+                <div class="faculty-card" data-department="cybersecurity">
+                    <div class="faculty-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1629507208649-70919ca33793?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Arş. Gör. Deniz Bora Küçük" class="faculty-img">
+                        <div class="faculty-overlay"></div>
+                        <div class="faculty-hover"></div>
+                    </div>
+                    <div class="faculty-content">
+                        <h3 class="faculty-name">Arş. Gör. Deniz Bora Küçük</h3>
+                        <p class="faculty-title" data-tr="Araştırma Görevlisi" data-en="Research Assistant">Araştırma Görevlisi</p>
+                        <p class="faculty-department" data-tr="Siber Güvenlik" data-en="Cybersecurity">Siber Güvenlik</p>
+                        <p class="faculty-specialization" data-tr="Ağ Güvenliği, Sızma Testleri" data-en="Network Security, Penetration Testing">Ağ Güvenliği, Sızma Testleri</p>
+                        <div class="faculty-stats">
+                            <div class="faculty-stat">
+                                <i data-lucide="book-open"></i>
+                                <span>19 <span data-tr="Yayın" data-en="Publications">Yayın</span></span>
+                            </div>
+                        </div>
+                        <div class="faculty-links">
+                            <a href="mailto:deniz.kucuk@samsun.edu.tr" class="faculty-link-btn" aria-label="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                            <a href="https://tr.linkedin.com/in/denizborakucuk" target="_blank" rel="noopener noreferrer" class="faculty-link-btn" aria-label="LinkedIn">
+                                <i data-lucide="linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="faculty-corner faculty-corner-top"></div>
+                    <div class="faculty-corner faculty-corner-bottom"></div>
+                </div>
+
+                <!-- Faculty Member 11 -->
+                <div class="faculty-card" data-department="data-science">
+                    <div class="faculty-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1758685734503-58a8accc24e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Arş. Gör. Ferhat Arat" class="faculty-img">
+                        <div class="faculty-overlay"></div>
+                        <div class="faculty-hover"></div>
+                    </div>
+                    <div class="faculty-content">
+                        <h3 class="faculty-name">Arş. Gör. Ferhat Arat</h3>
+                        <p class="faculty-title" data-tr="Araştırma Görevlisi" data-en="Research Assistant">Araştırma Görevlisi</p>
+                        <p class="faculty-department" data-tr="Veri Bilimi" data-en="Data Science">Veri Bilimi</p>
+                        <p class="faculty-specialization" data-tr="Büyük Veri, Veri Görselleştirme" data-en="Big Data, Data Visualization">Büyük Veri, Veri Görselleştirme</p>
+                        <div class="faculty-stats">
+                            <div class="faculty-stat">
+                                <i data-lucide="book-open"></i>
+                                <span>16 <span data-tr="Yayın" data-en="Publications">Yayın</span></span>
+                            </div>
+                        </div>
+                        <div class="faculty-links">
+                            <a href="mailto:ferhat.arat@samsun.edu.tr" class="faculty-link-btn" aria-label="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                            <a href="https://tr.linkedin.com/in/ferhat-arat-922167327" target="_blank" rel="noopener noreferrer" class="faculty-link-btn" aria-label="LinkedIn">
+                                <i data-lucide="linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="faculty-corner faculty-corner-top"></div>
+                    <div class="faculty-corner faculty-corner-bottom"></div>
+                </div>
+
+                <!-- Faculty Member 12 -->
+                <div class="faculty-card" data-department="software-architecture">
+                    <div class="faculty-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1629507208649-70919ca33793?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Arş. Gör. Furkancan Demircan" class="faculty-img">
+                        <div class="faculty-overlay"></div>
+                        <div class="faculty-hover"></div>
+                    </div>
+                    <div class="faculty-content">
+                        <h3 class="faculty-name">Arş. Gör. Furkancan Demircan</h3>
+                        <p class="faculty-title" data-tr="Araştırma Görevlisi" data-en="Research Assistant">Araştırma Görevlisi</p>
+                        <p class="faculty-department" data-tr="Yazılım Mimarisi" data-en="Software Architecture">Yazılım Mimarisi</p>
+                        <p class="faculty-specialization" data-tr="Yazılım Testi, Kalite Güvencesi" data-en="Software Testing, Quality Assurance">Yazılım Testi, Kalite Güvencesi</p>
+                        <div class="faculty-stats">
+                            <div class="faculty-stat">
+                                <i data-lucide="book-open"></i>
+                                <span>14 <span data-tr="Yayın" data-en="Publications">Yayın</span></span>
+                            </div>
+                        </div>
+                        <div class="faculty-links">
+                            <a href="mailto:furkancan.demircan@samsun.edu.tr" class="faculty-link-btn" aria-label="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                            <a href="https://tr.linkedin.com/in/furkancan-demircan-321abb219" target="_blank" rel="noopener noreferrer" class="faculty-link-btn" aria-label="LinkedIn">
+                                <i data-lucide="linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="faculty-corner faculty-corner-top"></div>
+                    <div class="faculty-corner faculty-corner-bottom"></div>
+                </div>
+
+                <!-- Faculty Member 13 -->
+                <div class="faculty-card" data-department="artificial-intelligence">
+                    <div class="faculty-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1758685734503-58a8accc24e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Arş. Gör. İlker Gür" class="faculty-img">
+                        <div class="faculty-overlay"></div>
+                        <div class="faculty-hover"></div>
+                    </div>
+                    <div class="faculty-content">
+                        <h3 class="faculty-name">Arş. Gör. İlker Gür</h3>
+                        <p class="faculty-title" data-tr="Araştırma Görevlisi" data-en="Research Assistant">Araştırma Görevlisi</p>
+                        <p class="faculty-department" data-tr="Yapay Zeka" data-en="Artificial Intelligence">Yapay Zeka</p>
+                        <p class="faculty-specialization" data-tr="Bilgisayarlı Görü, Görüntü İşleme" data-en="Computer Vision, Image Processing">Bilgisayarlı Görü, Görüntü İşleme</p>
+                        <div class="faculty-stats">
+                            <div class="faculty-stat">
+                                <i data-lucide="book-open"></i>
+                                <span>12 <span data-tr="Yayın" data-en="Publications">Yayın</span></span>
+                            </div>
+                        </div>
+                        <div class="faculty-links">
+                            <a href="mailto:ilker.gur@samsun.edu.tr" class="faculty-link-btn" aria-label="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                            <a href="https://tr.linkedin.com/in/ilker-gur" target="_blank" rel="noopener noreferrer" class="faculty-link-btn" aria-label="LinkedIn">
+                                <i data-lucide="linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="faculty-corner faculty-corner-top"></div>
+                    <div class="faculty-corner faculty-corner-bottom"></div>
+                </div>
+
+                <!-- Faculty Member 14 -->
+                <div class="faculty-card" data-department="cybersecurity">
+                    <div class="faculty-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1629507208649-70919ca33793?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Arş. Gör. Ömer Durmuş" class="faculty-img">
+                        <div class="faculty-overlay"></div>
+                        <div class="faculty-hover"></div>
+                    </div>
+                    <div class="faculty-content">
+                        <h3 class="faculty-name">Arş. Gör. Ömer Durmuş</h3>
+                        <p class="faculty-title" data-tr="Araştırma Görevlisi" data-en="Research Assistant">Araştırma Görevlisi</p>
+                        <p class="faculty-department" data-tr="Siber Güvenlik" data-en="Cybersecurity">Siber Güvenlik</p>
+                        <p class="faculty-specialization" data-tr="Bulut Güvenliği, Kötü Amaçlı Yazılım Analizi" data-en="Cloud Security, Malware Analysis">Bulut Güvenliği, Kötü Amaçlı Yazılım Analizi</p>
+                        <div class="faculty-stats">
+                            <div class="faculty-stat">
+                                <i data-lucide="book-open"></i>
+                                <span>10 <span data-tr="Yayın" data-en="Publications">Yayın</span></span>
+                            </div>
+                        </div>
+                        <div class="faculty-links">
+                            <a href="mailto:omer.durmus@samsun.edu.tr" class="faculty-link-btn" aria-label="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                            <a href="https://tr.linkedin.com/in/%C3%B6mer-durmu%C5%9F-603b82a4" target="_blank" rel="noopener noreferrer" class="faculty-link-btn" aria-label="LinkedIn">
+                                <i data-lucide="linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="faculty-corner faculty-corner-top"></div>
+                    <div class="faculty-corner faculty-corner-bottom"></div>
+                </div>
+
+                <!-- Faculty Member 15 -->
+                <div class="faculty-card" data-department="data-science">
+                    <div class="faculty-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1758685734503-58a8accc24e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Arş. Gör. Sarp Çoban" class="faculty-img">
+                        <div class="faculty-overlay"></div>
+                        <div class="faculty-hover"></div>
+                    </div>
+                    <div class="faculty-content">
+                        <h3 class="faculty-name">Arş. Gör. Sarp Çoban</h3>
+                        <p class="faculty-title" data-tr="Araştırma Görevlisi" data-en="Research Assistant">Araştırma Görevlisi</p>
+                        <p class="faculty-department" data-tr="Veri Bilimi" data-en="Data Science">Veri Bilimi</p>
+                        <p class="faculty-specialization" data-tr="İstatistiksel Analiz, Veri Madenciliği" data-en="Statistical Analysis, Data Mining">İstatistiksel Analiz, Veri Madenciliği</p>
+                        <div class="faculty-stats">
+                            <div class="faculty-stat">
+                                <i data-lucide="book-open"></i>
+                                <span>9 <span data-tr="Yayın" data-en="Publications">Yayın</span></span>
+                            </div>
+                        </div>
+                        <div class="faculty-links">
+                            <a href="mailto:sarp.coban@samsun.edu.tr" class="faculty-link-btn" aria-label="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                            <a href="https://tr.linkedin.com/in/sarp-%C3%A7oban-b274b317b" target="_blank" rel="noopener noreferrer" class="faculty-link-btn" aria-label="LinkedIn">
+                                <i data-lucide="linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="faculty-corner faculty-corner-top"></div>
+                    <div class="faculty-corner faculty-corner-bottom"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <h2 class="cta-title" data-tr="Akademik Topluluğumuza Katılın" data-en="Join Our Academic Community">Akademik Topluluğumuza Katılın</h2>
+                <p class="cta-description"
+                   data-tr="Seçkin fakültemize katılacak yetenekli araştırmacılar ve eğitimciler arıyoruz. Mevcut fırsatları keşfedin."
+                   data-en="We are seeking talented researchers and educators to join our distinguished faculty. Explore current opportunities.">
+                    Seçkin fakültemize katılacak yetenekli araştırmacılar ve eğitimciler arıyoruz. Mevcut fırsatları keşfedin.
+                </p>
+                <a href="#" class="btn-primary">
+                    <span data-tr="Akademik Pozisyonlar" data-en="Faculty Positions">Akademik Pozisyonlar</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- University Info -->
+                <div class="footer-col">
+                    <h3 class="footer-title" data-tr="Samsun Üniversitesi" data-en="Samsun University">Samsun Üniversitesi</h3>
+                    <p class="footer-subtitle" data-tr="Yazılım Mühendisliği Bölümü" data-en="Software Engineering Department">Yazılım Mühendisliği Bölümü</p>
+                    <p class="footer-badge" data-tr="2018'den Beri Eğitimde Mükemmellik" data-en="Excellence in Education Since 2018">2018'den Beri Eğitimde Mükemmellik</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-tr="Hızlı Bağlantılar" data-en="Quick Links">Hızlı Bağlantılar</h4>
+                    <div class="footer-links">
+                        <a href="about.html" class="footer-link" data-tr="Bölüm Hakkında" data-en="About the Department">Bölüm Hakkında</a>
+                        <a href="faculty.html" class="footer-link" data-tr="Akademisyenler" data-en="Faculty">Akademisyenler</a>
+                        <a href="admissions.html" class="footer-link" data-tr="Başvuru" data-en="Admissions">Başvuru</a>
+                        <a href="research.html" class="footer-link" data-tr="Araştırma" data-en="Research">Araştırma</a>
+                        <a href="curriculum.html" class="footer-link" data-tr="Müfredat" data-en="Curriculum">Müfredat</a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-tr="İletişim" data-en="Contact">İletişim</h4>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i data-lucide="map-pin"></i>
+                            <span data-tr="Samsun Üniversitesi Mühendislik Fakültesi Ballıca Kampüsü, 19 Mayıs, Samsun" 
+                                  data-en="Samsun University Faculty of Engineering Ballıca Campus, 19 Mayıs, Samsun">
+                                Samsun Üniversitesi Mühendislik Fakültesi Ballıca Kampüsü, 19 Mayıs, Samsun
+                            </span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="phone"></i>
+                            <span>+90 (362) 313 0055</span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="mail"></i>
+                            <span>muhendislik@samsun.edu.tr</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-tr="Bizi Takip Edin" data-en="Follow Us">Bizi Takip Edin</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/samsun.univ" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                            <i data-lucide="facebook"></i>
+                        </a>
+                        <a href="https://x.com/samsun_univ" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/school/samsununiversitesi/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/samsun.univ/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                            <i data-lucide="instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/c/Samsun%C3%9Cniversitesii" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+                            <i data-lucide="youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright" 
+                   data-tr="© 2026 Samsun Üniversitesi Yazılım Mühendisliği Bölümü. Tüm hakları saklıdır."
+                   data-en="© 2026 Samsun University Software Engineering Department. All rights reserved.">
+                    © 2026 Samsun Üniversitesi Yazılım Mühendisliği Bölümü. Tüm hakları saklıdır.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

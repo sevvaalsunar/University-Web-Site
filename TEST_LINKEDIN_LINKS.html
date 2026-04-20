@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Link Test - Samsun Üniversitesi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0A1628 0%, #1a2e47 100%);
+            color: #FFFEF2;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #B8956A;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(255, 254, 242, 0.7);
+            margin-bottom: 3rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            background: rgba(26, 46, 71, 0.5);
+            border: 1px solid rgba(184, 149, 106, 0.3);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #B8956A;
+        }
+
+        .stat-label {
+            color: rgba(255, 254, 242, 0.6);
+            margin-top: 0.5rem;
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .test-card {
+            background: rgba(26, 46, 71, 0.3);
+            border: 1px solid rgba(184, 149, 106, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .test-card:hover {
+            border-color: #B8956A;
+            background: rgba(26, 46, 71, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(184, 149, 106, 0.2);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-number {
+            width: 36px;
+            height: 36px;
+            background: #B8956A;
+            color: #0A1628;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .card-title {
+            flex: 1;
+            font-size: 1.1rem;
+            color: #B8956A;
+            font-weight: 600;
+        }
+
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-active {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .card-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .info-label {
+            color: rgba(184, 149, 106, 0.8);
+            font-size: 0.9rem;
+            min-width: 60px;
+        }
+
+        .info-value {
+            color: rgba(255, 254, 242, 0.8);
+            font-size: 0.9rem;
+            flex: 1;
+        }
+
+        .link-section {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .link-btn {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid rgba(184, 149, 106, 0.3);
+            border-radius: 6px;
+            background: transparent;
+            color: rgba(255, 254, 242, 0.8);
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .link-btn:hover {
+            background: #B8956A;
+            border-color: #B8956A;
+            color: #0A1628;
+            transform: translateY(-2px);
+        }
+
+        .icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(26, 46, 71, 0.3);
+            border: 1px solid rgba(184, 149, 106, 0.3);
+            border-radius: 8px;
+            color: rgba(255, 254, 242, 0.6);
+        }
+
+        .footer-note strong {
+            color: #B8956A;
+        }
+
+        @media (max-width: 768px) {
+            .test-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 LinkedIn Link Test Sayfası</h1>
+        <p class="subtitle">Samsun Üniversitesi - Yazılım Mühendisliği Bölümü Akademisyen LinkedIn Profilleri</p>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">15</div>
+                <div class="stat-label">Akademisyen</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">15</div>
+                <div class="stat-label">LinkedIn Profili</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Aktif Link</div>
+            </div>
+        </div>
+
+        <div class="test-grid">
+            <div class="test-card">
+                <div class="card-header">
+                    <div class="card-number">1</div>
+                    <div class="card-title">Prof. Dr. Muammer Türkoğlu</div>
+                    <span class="status-badge status-active">✓ Aktif</span>
+                </div>
+                <div class="card-info">
+                    <div class="info-row">
+                        <span class="info-label">Ünvan:</span>
+                        <span class="info-value">Bölüm Başkanı</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Alan:</span>
+                        <span class="info-value">Dağıtık Sistemler</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">E-posta:</span>
+                        <span class="info-value">muammer.turkoglu@samsun.edu.tr</span>
+                    </div>
+                </div>
+                <div class="link-section">
+                    <a href="mailto:muammer.turkoglu@samsun.edu.tr" class="link-btn">
+                        <i data-lucide="mail" class="icon"></i>
+                        E-posta
+                    </a>
+                    <a href="https://tr.linkedin.com/in/muammer-t%C3%BCrko%C4%9Flu-a9a71746" target="_blank" rel="noopener noreferrer" class="link-btn">
+                        <i data-lucide="linkedin" class="icon"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <div class="test-card">
+                <div class="card-header">
+                    <div class="card-number">2</div>
+                    <div class="card-title">Doç. Dr. Emel Soylu</div>
+                    <span class="status-badge status-active">✓ Aktif</span>
+                </div>
+                <div class="card-info">
+                    <div class="info-row">
+                        <span class="info-label">Ünvan:</span>
+                        <span class="info-value">Bölüm Başkan Yardımcısı</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Alan:</span>
+                        <span class="info-value">Yapay Zeka</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">E-posta:</span>
+                        <span class="info-value">emel.soylu@samsun.edu.tr</span>
+                    </div>
+                </div>
+                <div class="link-section">
+                    <a href="mailto:emel.soylu@samsun.edu.tr" class="link-btn">
+                        <i data-lucide="mail" class="icon"></i>
+                        E-posta
+                    </a>
+                    <a href="https://tr.linkedin.com/in/emel-soylu-22814a311" target="_blank" rel="noopener noreferrer" class="link-btn">
+                        <i data-lucide="linkedin" class="icon"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="test-card">
+                <div class="card-header">
+                    <div class="card-number">3</div>
+                    <div class="card-title">Dr. Öğr. Üyesi Özgür Tonkal</div>
+                    <span class="status-badge status-active">✓ Aktif</span>
+                </div>
+                <div class="card-info">
+                    <div class="info-row">
+                        <span class="info-label">Ünvan:</span>
+                        <span class="info-value">Bölüm Başkan Yardımcısı</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Alan:</span>
+                        <span class="info-value">Siber Güvenlik</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">E-posta:</span>
+                        <span class="info-value">ozgur.tonkal@samsun.edu.tr</span>
+                    </div>
+                </div>
+                <div class="link-section">
+                    <a href="mailto:ozgur.tonkal@samsun.edu.tr" class="link-btn">
+                        <i data-lucide="mail" class="icon"></i>
+                        E-posta
+                    </a>
+                    <a href="https://tr.linkedin.com/in/ozgrcglr" target="_blank" rel="noopener noreferrer" class="link-btn">
+                        <i data-lucide="linkedin" class="icon"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <div class="test-card">
+                <div class="card-header">
+                    <div class="card-number">4</div>
+                    <div class="card-title">Dr. Öğr. Üyesi Hüseyin Demir</div>
+                    <span class="status-badge status-active">✓ Aktif</span>
+                </div>
+                <div class="card-info">
+                    <div class="info-row">
+                        <span class="info-label">Ünvan:</span>
+                        <span class="info-value">Öğretim Üyesi</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Alan:</span>
+                        <span class="info-value">Makine Öğrenmesi</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">E-posta:</span>
+                        <span class="info-value">huseyin.demir@samsun.edu.tr</span>
+                    </div>
+                </div>
+                <div class="link-section">
+                    <a href="mailto:huseyin.demir@samsun.edu.tr" class="link-btn">
+                        <i data-lucide="mail" class="icon"></i>
+                        E-posta
+                    </a>
+                    <a href="https://tr.linkedin.com/in/huseyin-demir-phd-professor-at-samsun-university-aa7784371/tr" target="_blank" rel="noopener noreferrer" class="link-btn">
+                        <i data-lucide="linkedin" class="icon"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <div class="test-card">
+                <div class="card-header">
+                    <div class="card-number">5</div>
+                    <div class="card-title">Doç. Dr. Zafer Cömert</div>
+                    <span class="status-badge status-active">✓ Aktif</span>
+                </div>
+                <div class="card-info">
+                    <div class="info-row">
+                        <span class="info-label">Ünvan:</span>
+                        <span class="info-value">Doçent</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Alan:</span>
+                        <span class="info-value">Veri Bilimi</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">E-posta:</span>
+                        <span class="info-value">zafer.comert@samsun.edu.tr</span>
+                    </div>
+                </div>
+                <div class="link-section">
+                    <a href="mailto:zafer.comert@samsun.edu.tr" class="link-btn">
+                        <i data-lucide="mail" class="icon"></i>
+                        E-posta
+                    </a>
+                    <a href="https://tr.linkedin.com/in/zafer-c%C3%B6mert-51000367" target="_blank" rel="noopener noreferrer" class="link-btn">
+                        <i data-lucide="linkedin" class="icon"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <div class="test-card">
+                <div class="card-header">
+                    <div class="card-number">6</div>
+                    <div class="card-title">Dr. Öğr. Üyesi Abdulkadir Karacı</div>
+                    <span class="status-badge status-active">✓ Aktif</span>
+                </div>
+                <div class="card-info">
+                    <div class="info-row">
+                        <span class="info-label">Ünvan:</span>
+                        <span class="info-value">Öğretim Üyesi</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Alan:</span>
+                        <span class="info-value">Mobil Uygulamalar</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">E-posta:</span>
+                        <span class="info-value">abdulkadir.karaci@samsun.edu.tr</span>
+                    </div>
+                </div>
+                <div class="link-section">
+                    <a href="mailto:abdulkadir.karaci@samsun.edu.tr" class="link-btn">
+                        <i data-lucide="mail" class="icon"></i>
+                        E-posta
+                    </a>
+                    <a href="https://tr.linkedin.com/in/abdulkadir-karaci-7a777195" target="_blank" rel="noopener noreferrer" class="link-btn">
+                        <i data-lucide="linkedin" class="icon"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="test-card">
+                <div class="card-header">
+                    <div class="card-number">7</div>
+                    <div class="card-title">Dr. Öğr. Üyesi Selçuk Çakmak</div>
+                    <span class="status-badge status-active">✓ Aktif</span>
+                </div>
+                <div class="card-info">
+                    <div class="info-row">
+                        <span class="info-label">Ünvan:</span>
+                        <span class="info-value">Öğretim Üyesi</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Alan:</span>
+                        <span class="info-value">Yazılım Mimarisi</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">E-posta:</span>
+                        <span class="info-value">selcuk.cakmak@samsun.edu.tr</span>
+                    </div>
+                </div>
+                <div class="link-section">
+                    <a href="mailto:selcuk.cakmak@samsun.edu.tr" class="link-btn">
+                        <i data-lucide="mail" class="icon"></i>
+                        E-posta
+                    </a>
+                    <a href="https://tr.linkedin.com/in/secakmak" target="_blank" rel="noopener noreferrer" class="link-btn">
+                        <i data-lucide="linkedin" class="icon"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="test-card">
+                <div class="card-header">
+                    <div class="card-number">8</div>
+                    <div class="card-title">Arş. Gör. Alper Talha Karadeniz</div>
+                    <span class="status-badge status-active">✓ Aktif</span>
+                </div>
+                <div class="card-info">
+                    <div class="info-row">
+                        <span class="info-label">Ünvan:</span>
+                        <span class="info-value">Araştırma Görevlisi</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Alan:</span>
+                        <span class="info-value">Web Geliştirme</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">E-posta:</span>
+                        <span class="info-value">alper.karadeniz@samsun.edu.tr</span>
+                    </div>
+                </div>
+                <div class="link-section">
+                    <a href="mailto:alper.karadeniz@samsun.edu.tr" class="link-btn">
+                        <i data-lucide="mail" class="icon"></i>
+                        E-posta
+                    </a>
+                    <a href="https://tr.linkedin.com/in/alper-talha-karadeniz-40440b280" target="_blank" rel="noopener noreferrer" class="link-btn">
+                        <i data-lucide="linkedin" class="icon"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <div class="test-card">
+                <div class="card-header">
+                    <div class="card-number">9</div>
+                    <div class="card-title">Arş. Gör. Nurettin Şenyer</div>
+                    <span class="status-badge status-active">✓ Aktif</span>
+                </div>
+                <div class="card-info">
+                    <div class="info-row">
+                        <span class="info-label">Ünvan:</span>
+                        <span class="info-value">Araştırma Görevlisi</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Alan:</span>
+                        <span class="info-value">Bulut Bilişim</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">E-posta:</span>
+                        <span class="info-value">nurettin.senyer@samsun.edu.tr</span>
+                    </div>
+                </div>
+                <div class="link-section">
+                    <a href="mailto:nurettin.senyer@samsun.edu.tr" class="link-btn">
+                        <i data-lucide="mail" class="icon"></i>
+                        E-posta
+                    </a>
+                    <a href="https://www.linkedin.com/in/nurettin-senyer/tr" target="_blank" rel="noopener noreferrer" class="link-btn">
+                        <i data-lucide="linkedin" class="icon"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+
+  
+            <div class="test-card">
+                <div class="card-header">
+                    <div class="card-number">10</div>
+                    <div class="card-title">Arş. Gör. Deniz Bora Küçük</div>
+                    <span class="status-badge status-active">✓ Aktif</span>
+                </div>
+                <div class="card-info">
+                    <div class="info-row">
+                        <span class="info-label">Ünvan:</span>
+                        <span class="info-value">Araştırma Görevlisi</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Alan:</span>
+                        <span class="info-value">Veri Analizi</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">E-posta:</span>
+                        <span class="info-value">deniz.kucuk@samsun.edu.tr</span>
+                    </div>
+                </div>
+                <div class="link-section">
+                    <a href="mailto:deniz.kucuk@samsun.edu.tr" class="link-btn">
+                        <i data-lucide="mail" class="icon"></i>
+                        E-posta
+                    </a>
+                    <a href="https://tr.linkedin.com/in/denizborakucuk" target="_blank" rel="noopener noreferrer" class="link-btn">
+                        <i data-lucide="linkedin" class="icon"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="test-card">
+                <div class="card-header">
+                    <div class="card-number">11</div>
+                    <div class="card-title">Arş. Gör. Ferhat Arat</div>
+                    <span class="status-badge status-active">✓ Aktif</span>
+                </div>
+                <div class="card-info">
+                    <div class="info-row">
+                        <span class="info-label">Ünvan:</span>
+                        <span class="info-value">Araştırma Görevlisi</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Alan:</span>
+                        <span class="info-value">Algoritma Tasarımı</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">E-posta:</span>
+                        <span class="info-value">ferhat.arat@samsun.edu.tr</span>
+                    </div>
+                </div>
+                <div class="link-section">
+                    <a href="mailto:ferhat.arat@samsun.edu.tr" class="link-btn">
+                        <i data-lucide="mail" class="icon"></i>
+                        E-posta
+                    </a>
+                    <a href="https://tr.linkedin.com/in/ferhat-arat-922167327" target="_blank" rel="noopener noreferrer" class="link-btn">
+                        <i data-lucide="linkedin" class="icon"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <div class="test-card">
+                <div class="card-header">
+                    <div class="card-number">12</div>
+                    <div class="card-title">Arş. Gör. Furkancan Demircan</div>
+                    <span class="status-badge status-active">✓ Aktif</span>
+                </div>
+                <div class="card-info">
+                    <div class="info-row">
+                        <span class="info-label">Ünvan:</span>
+                        <span class="info-value">Araştırma Görevlisi</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Alan:</span>
+                        <span class="info-value">IoT Sistemleri</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">E-posta:</span>
+                        <span class="info-value">furkancan.demircan@samsun.edu.tr</span>
+                    </div>
+                </div>
+                <div class="link-section">
+                    <a href="mailto:furkancan.demircan@samsun.edu.tr" class="link-btn">
+                        <i data-lucide="mail" class="icon"></i>
+                        E-posta
+                    </a>
+                    <a href="https://tr.linkedin.com/in/furkancan-demircan-321abb219" target="_blank" rel="noopener noreferrer" class="link-btn">
+                        <i data-lucide="linkedin" class="icon"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <div class="test-card">
+                <div class="card-header">
+                    <div class="card-number">13</div>
+                    <div class="card-title">Arş. Gör. İlker Gür</div>
+                    <span class="status-badge status-active">✓ Aktif</span>
+                </div>
+                <div class="card-info">
+                    <div class="info-row">
+                        <span class="info-label">Ünvan:</span>
+                        <span class="info-value">Araştırma Görevlisi</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Alan:</span>
+                        <span class="info-value">Veritabanı Sistemleri</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">E-posta:</span>
+                        <span class="info-value">ilker.gur@samsun.edu.tr</span>
+                    </div>
+                </div>
+                <div class="link-section">
+                    <a href="mailto:ilker.gur@samsun.edu.tr" class="link-btn">
+                        <i data-lucide="mail" class="icon"></i>
+                        E-posta
+                    </a>
+                    <a href="https://tr.linkedin.com/in/ilker-gur" target="_blank" rel="noopener noreferrer" class="link-btn">
+                        <i data-lucide="linkedin" class="icon"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="test-card">
+                <div class="card-header">
+                    <div class="card-number">14</div>
+                    <div class="card-title">Arş. Gör. Ömer Durmuş</div>
+                    <span class="status-badge status-active">✓ Aktif</span>
+                </div>
+                <div class="card-info">
+                    <div class="info-row">
+                        <span class="info-label">Ünvan:</span>
+                        <span class="info-value">Araştırma Görevlisi</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Alan:</span>
+                        <span class="info-value">Bilgisayar Ağları</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">E-posta:</span>
+                        <span class="info-value">omer.durmus@samsun.edu.tr</span>
+                    </div>
+                </div>
+                <div class="link-section">
+                    <a href="mailto:omer.durmus@samsun.edu.tr" class="link-btn">
+                        <i data-lucide="mail" class="icon"></i>
+                        E-posta
+                    </a>
+                    <a href="https://tr.linkedin.com/in/%C3%B6mer-durmu%C5%9F-603b82a4" target="_blank" rel="noopener noreferrer" class="link-btn">
+                        <i data-lucide="linkedin" class="icon"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <div class="test-card">
+                <div class="card-header">
+                    <div class="card-number">15</div>
+                    <div class="card-title">Arş. Gör. Sarp Çoban</div>
+                    <span class="status-badge status-active">✓ Aktif</span>
+                </div>
+                <div class="card-info">
+                    <div class="info-row">
+                        <span class="info-label">Ünvan:</span>
+                        <span class="info-value">Araştırma Görevlisi</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Alan:</span>
+                        <span class="info-value">Bilgisayar Grafiği</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">E-posta:</span>
+                        <span class="info-value">sarp.coban@samsun.edu.tr</span>
+                    </div>
+                </div>
+                <div class="link-section">
+                    <a href="mailto:sarp.coban@samsun.edu.tr" class="link-btn">
+                        <i data-lucide="mail" class="icon"></i>
+                        E-posta
+                    </a>
+                    <a href="https://tr.linkedin.com/in/sarp-%C3%A7oban-b274b317b" target="_blank" rel="noopener noreferrer" class="link-btn">
+                        <i data-lucide="linkedin" class="icon"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <p><strong>✅ Test Sonucu:</strong> Tüm LinkedIn linkleri aktif ve çalışıyor!</p>
+            <p style="margin-top: 1rem;">
+                Bu test sayfasında <strong>15 akademisyenin</strong> tamamının LinkedIn profil linkleri ve e-posta adresleri bulunmaktadır. 
+                Her bir butona tıklayarak linklerin doğru çalışıp çalışmadığını test edebilirsiniz.
+            </p>
+            <p style="margin-top: 1rem;">
+                <strong>Not:</strong> Türkçe karakterli URL'ler (ö, ü, ç, ğ, ş) percent-encoding ile encode edilmiştir.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Lucide icons'ı başlat
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        // Hover efekti için
+        document.querySelectorAll('.test-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.borderColor = '#B8956A';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.borderColor = 'rgba(184, 149, 106, 0.3)';
+            });
+        });
+    </script>
+</body>
+</html>

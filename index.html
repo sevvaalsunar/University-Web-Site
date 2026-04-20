@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsun Üniversitesi Yazılım Mühendisliği Bölümü</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-desktop" id="nav-desktop">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="src/imports/Ekran_görüntüsü_2026-04-17_152101.png" alt="Samsun University Logo" class="logo-img">
+                <span class="logo-text" data-tr="Samsun Üniversitesi Yazılım Mühendisliği Bölümü" data-en="Samsun University Software Engineering Department">Samsun Üniversitesi Yazılım Mühendisliği Bölümü</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+                <a href="about.html" class="nav-link" data-tr="Bölüm Hakkında" data-en="About">Bölüm Hakkında</a>
+                <a href="faculty.html" class="nav-link" data-tr="Personel" data-en="Faculty">Personel</a>
+                <a href="curriculum.html" class="nav-link" data-tr="Eğitim" data-en="Curriculum">Eğitim</a>
+                <a href="projects.html" class="nav-link" data-tr="Projeler" data-en="Projects">Projeler</a>
+                <a href="research.html" class="nav-link" data-tr="Araştırma" data-en="Research">Araştırma</a>
+                <a href="news.html" class="nav-link" data-tr="Haberler" data-en="News">Haberler</a>
+                <a href="contact.html" class="nav-link" data-tr="İletişim" data-en="Contact">İletişim</a>
+            </div>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="TR">TR</button>
+                <button class="lang-btn" data-lang="EN">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="nav-mobile" id="nav-mobile">
+        <div class="nav-mobile-header">
+            <a href="index.html" class="nav-logo-mobile">
+                <img src="src/imports/Ekran_görüntüsü_2026-04-17_152101.png" alt="Samsun University Logo" class="logo-img">
+                <span class="logo-text-mobile">SAMÜ YM</span>
+            </a>
+            <div class="mobile-controls">
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="TR">TR</button>
+                    <button class="lang-btn" data-lang="EN">EN</button>
+                </div>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html" class="mobile-link active" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+            <a href="about.html" class="mobile-link" data-tr="Bölüm Hakkında" data-en="About">Bölüm Hakkında</a>
+            <a href="faculty.html" class="mobile-link" data-tr="Personel" data-en="Faculty">Personel</a>
+            <a href="curriculum.html" class="mobile-link" data-tr="Eğitim" data-en="Curriculum">Eğitim</a>
+            <a href="projects.html" class="mobile-link" data-tr="Projeler" data-en="Projects">Projeler</a>
+            <a href="research.html" class="mobile-link" data-tr="Araştırma" data-en="Research">Araştırma</a>
+            <a href="news.html" class="mobile-link" data-tr="Haberler" data-en="News">Haberler</a>
+            <a href="contact.html" class="mobile-link" data-tr="İletişim" data-en="Contact">İletişim</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="https://images.unsplash.com/photo-1762793215104-f93c3a098c16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920" alt="University Library" class="hero-img">
+            <div class="hero-overlay"></div>
+            <div class="hero-gradient"></div>
+        </div>
+
+        <div class="hero-decorative">
+            <div class="decorative-circle decorative-circle-1"></div>
+            <div class="decorative-circle decorative-circle-2"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge" data-tr="KURULDU 2018" data-en="ESTABLISHED 2018">KURULDU 2018</div>
+            <h1 class="hero-title">
+                <span class="hero-title-main" data-tr="Yazılım Mühendisliği" data-en="Software Engineering">Yazılım Mühendisliği</span><br>
+                <span class="hero-title-accent" data-tr="Bölümü" data-en="Department">Bölümü</span>
+            </h1>
+            <p class="hero-subtitle" 
+               data-tr="Samsun Üniversitesi Yazılım Mühendisliği Bölümü, zamansız akademik geleneği son teknoloji ile birleştirerek yeni nesil yenilikçileri yetiştirmektedir."
+               data-en="Samsun University Software Engineering Department cultivates the next generation of innovators by combining timeless academic tradition with cutting-edge technology.">
+                Samsun Üniversitesi Yazılım Mühendisliği Bölümü, zamansız akademik geleneği son teknoloji ile birleştirerek yeni nesil yenilikçileri yetiştirmektedir.
+            </p>
+            <div class="hero-buttons">
+                <a href="admissions.html" class="btn-primary">
+                    <span data-tr="Başvur" data-en="Apply Now">Başvur</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="about.html" class="btn-secondary" data-tr="Mirasımızı Keşfedin" data-en="Discover Our Heritage">Mirasımızı Keşfedin</a>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i data-lucide="users"></i>
+                    <div class="stat-number">8.519</div>
+                    <div class="stat-label" data-tr="Öğrenci" data-en="Students">Öğrenci</div>
+                </div>
+                <div class="stat-card">
+                    <i data-lucide="book-open"></i>
+                    <div class="stat-number">71</div>
+                    <div class="stat-label" data-tr="Program" data-en="Programs">Program</div>
+                </div>
+                <div class="stat-card">
+                    <i data-lucide="award"></i>
+                    <div class="stat-number">518</div>
+                    <div class="stat-label" data-tr="Akademisyen" data-en="Faculty">Akademisyen</div>
+                </div>
+                <div class="stat-card">
+                    <i data-lucide="sparkles"></i>
+                    <div class="stat-number">336</div>
+                    <div class="stat-label" data-tr="İdari Personel" data-en="Staff">İdari Personel</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-border">
+                <div class="scroll-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="history-section">
+        <div class="container">
+            <h2 class="section-title" data-tr="Tarihçe ve Kuruluş" data-en="History and Foundation">Tarihçe ve Kuruluş</h2>
+            <div class="history-content">
+                <p class="history-text" 
+                   data-tr="Samsun Üniversitesi, 18 Mayıs 2018 tarihinde Samsun'da kurulan devlet üniversitesidir. Ondokuz Mayıs Üniversitesinin bazı fakülte ile yüksekokullarının devriyle kurulan ve Samsun'daki ikinci devlet üniversitesi olan Samsun Üniversitesinin merkez yerleşkesi Canik ilçesinde bulunmaktadır."
+                   data-en="Samsun University is a state university founded in Samsun on May 18, 2018. Established through the transfer of certain faculties and schools from Ondokuz Mayıs University, it is the second state university in Samsun with its main campus located in the Canik district.">
+                    Samsun Üniversitesi, 18 Mayıs 2018 tarihinde Samsun'da kurulan devlet üniversitesidir. Ondokuz Mayıs Üniversitesinin bazı fakülte ile yüksekokullarının devriyle kurulan ve Samsun'daki ikinci devlet üniversitesi olan Samsun Üniversitesinin merkez yerleşkesi Canik ilçesinde bulunmaktadır.
+                </p>
+                <p class="history-text-secondary"
+                   data-tr="24 Eylül 2018'de ilk eğitim-öğretim dönemine başlayan üniversite, 19 Mayıs ilçesindeki Ballıca yerleşkesinde teknik fakülteleri ve Canik yerleşkesinde sosyal bilimler fakültelerini barındırmaktadır. Yazılım Mühendisliği Bölümü, üniversitenin prestij bölümlerinden biri olarak teknoloji eğitiminde öncü rol üstlenmektedir."
+                   data-en="The university began its first academic year on September 24, 2018, housing technical faculties at the Ballıca campus in 19 Mayıs district and social sciences faculties at the Canik campus. The Software Engineering Department serves as one of the university's flagship programs, playing a pioneering role in technology education.">
+                    24 Eylül 2018'de ilk eğitim-öğretim dönemine başlayan üniversite, 19 Mayıs ilçesindeki Ballıca yerleşkesinde teknik fakülteleri ve Canik yerleşkesinde sosyal bilimler fakültelerini barındırmaktadır. Yazılım Mühendisliği Bölümü, üniversitenin prestij bölümlerinden biri olarak teknoloji eğitiminde öncü rol üstlenmektedir.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Sections -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="featured-grid">
+                <!-- Academic Excellence -->
+                <div class="featured-card">
+                    <div class="featured-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1771647287015-f30dbb239646?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Academic Excellence" class="featured-img">
+                        <div class="featured-overlay"></div>
+                        <div class="featured-hover"></div>
+                    </div>
+                    <div class="featured-content">
+                        <h2 class="featured-title" data-tr="Teknik Mükemmellik" data-en="Technical Excellence">Teknik Mükemmellik</h2>
+                        <p class="featured-desc" 
+                           data-tr="Yazılım yaşam döngüsü, algoritma tasarımı ve sistem mimarisi odaklı derinlemesine eğitim"
+                           data-en="In-depth education focused on software lifecycle, algorithm design, and system architecture">
+                            Yazılım yaşam döngüsü, algoritma tasarımı ve sistem mimarisi odaklı derinlemesine eğitim
+                        </p>
+                        <a href="curriculum.html" class="featured-link">
+                            <span data-tr="Müfredatı İncele" data-en="Explore Curriculum">Müfredatı İncele</span>
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Innovation -->
+                <div class="featured-card">
+                    <div class="featured-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1771189957040-3a4f9b78812c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Innovation" class="featured-img">
+                        <div class="featured-overlay"></div>
+                        <div class="featured-hover"></div>
+                    </div>
+                    <div class="featured-content">
+                        <h2 class="featured-title" data-tr="Son Teknoloji İnovasyon" data-en="Cutting-Edge Innovation">Son Teknoloji İnovasyon</h2>
+                        <p class="featured-desc"
+                           data-tr="Yapay zeka, siber güvenlik ve yazılım mimarisinde öncü araştırmalar"
+                           data-en="Pioneering research in AI, cybersecurity, and software architecture">
+                            Yapay zeka, siber güvenlik ve yazılım mimarisinde öncü araştırmalar
+                        </p>
+                        <a href="projects.html" class="featured-link">
+                            <span data-tr="Projeleri Görüntüle" data-en="View Projects">Projeleri Görüntüle</span>
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage Section -->
+    <section class="heritage-section">
+        <div class="container-narrow">
+            <h2 class="heritage-title" data-tr="Mükemmelliğin Mirası" data-en="A Legacy of Excellence">Mükemmelliğin Mirası</h2>
+            <p class="heritage-desc"
+               data-tr="2018'de kurulan Samsun Üniversitesi Yazılım Mühendisliği Bölümü, yazılım mühendisliği metodolojilerinde derinlemesine teknik eğitimi modern teknoloji yığınlarıyla birleştirerek sektör standartlarında yazılım mimarları yetiştirmektedir. SDLC, nesne yönelimli tasarım, mikroservis mimarisi ve DevOps uygulamalarına odaklanan müfredatımız, öğrencileri karmaşık yazılım sistemleri geliştirmeye hazırlar."
+               data-en="Founded in 2018, Samsun University Software Engineering Department combines in-depth technical education in software engineering methodologies with modern technology stacks, producing industry-standard software architects. Our curriculum, focused on SDLC, object-oriented design, microservice architecture, and DevOps practices, prepares students to develop complex software systems.">
+                2018'de kurulan Samsun Üniversitesi Yazılım Mühendisliği Bölümü, yazılım mühendisliği metodolojilerinde derinlemesine teknik eğitimi modern teknoloji yığınlarıyla birleştirerek sektör standartlarında yazılım mimarları yetiştirmektedir. SDLC, nesne yönelimli tasarım, mikroservis mimarisi ve DevOps uygulamalarına odaklanan müfredatımız, öğrencileri karmaşık yazılım sistemleri geliştirmeye hazırlar.
+            </p>
+            <a href="about.html" class="btn-secondary-large">
+                <span data-tr="Hikayemizi Öğrenin" data-en="Learn Our Story">Hikayemizi Öğrenin</span>
+                <i data-lucide="arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- University Info -->
+                <div class="footer-col">
+                    <h3 class="footer-title" data-tr="Samsun Üniversitesi" data-en="Samsun University">Samsun Üniversitesi</h3>
+                    <p class="footer-subtitle" data-tr="Yazılım Mühendisliği Bölümü" data-en="Software Engineering Department">Yazılım Mühendisliği Bölümü</p>
+                    <p class="footer-badge" data-tr="2018'den Beri Eğitimde Mükemmellik" data-en="Excellence in Education Since 2018">2018'den Beri Eğitimde Mükemmellik</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-tr="Hızlı Bağlantılar" data-en="Quick Links">Hızlı Bağlantılar</h4>
+                    <div class="footer-links">
+                        <a href="about.html" class="footer-link" data-tr="Bölüm Hakkında" data-en="About the Department">Bölüm Hakkında</a>
+                        <a href="faculty.html" class="footer-link" data-tr="Akademisyenler" data-en="Faculty">Akademisyenler</a>
+                        <a href="admissions.html" class="footer-link" data-tr="Başvuru" data-en="Admissions">Başvuru</a>
+                        <a href="research.html" class="footer-link" data-tr="Araştırma" data-en="Research">Araştırma</a>
+                        <a href="curriculum.html" class="footer-link" data-tr="Müfredat" data-en="Curriculum">Müfredat</a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-tr="İletişim" data-en="Contact">İletişim</h4>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i data-lucide="map-pin"></i>
+                            <span data-tr="Samsun Üniversitesi Mühendislik Fakültesi Ballıca Kampüsü, 19 Mayıs, Samsun" 
+                                  data-en="Samsun University Faculty of Engineering Ballıca Campus, 19 Mayıs, Samsun">
+                                Samsun Üniversitesi Mühendislik Fakültesi Ballıca Kampüsü, 19 Mayıs, Samsun
+                            </span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="phone"></i>
+                            <span>+90 (362) 313 0055</span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="mail"></i>
+                            <span>muhendislik@samsun.edu.tr</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-tr="Bizi Takip Edin" data-en="Follow Us">Bizi Takip Edin</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/samsun.univ" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                            <i data-lucide="facebook"></i>
+                        </a>
+                        <a href="https://x.com/samsun_univ" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/school/samsununiversitesi/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/samsun.univ/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                            <i data-lucide="instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/c/Samsun%C3%9Cniversitesii" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+                            <i data-lucide="youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright" 
+                   data-tr="© 2026 Samsun Üniversitesi Yazılım Mühendisliği Bölümü. Tüm hakları saklıdır."
+                   data-en="© 2026 Samsun University Software Engineering Department. All rights reserved.">
+                    © 2026 Samsun Üniversitesi Yazılım Mühendisliği Bölümü. Tüm hakları saklıdır.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
